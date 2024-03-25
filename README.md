@@ -1,4 +1,4 @@
-### Decription
+### Description
 1. The code can process PDF and JPEG files. You can extend its capabilities to handle other file types on your own.
 1. The bill in the source is a fake bill which was retrieved from this https://www.agl.com.au/content/dam/digital/agl/documents/billing-and-payments/agl-better-bills-sample-bill-necf.pdf
 
