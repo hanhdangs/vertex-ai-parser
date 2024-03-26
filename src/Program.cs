@@ -1,5 +1,7 @@
 ﻿using Vertex.Parser;
 
+AppContext.SetSwitch("System.Net.SocketsHttpHandler.Http2FlowControl.DisableDynamicWindowSizing", true);
+
 // Replace <project_id> by your project id
 var PROJECT_ID = "<project_id>";
 var directory = $"{Environment.CurrentDirectory}{Path.DirectorySeparatorChar}examples{Path.DirectorySeparatorChar}" ;
