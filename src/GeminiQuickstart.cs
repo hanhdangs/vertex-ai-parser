@@ -54,7 +54,7 @@ namespace Vertex.Parser
                 Model = $"projects/{_projectId}/locations/{_location}/publishers/{_publisher}/models/{_model}",
                 GenerationConfig = new GenerationConfig
                 {
-                    Temperature = 0.4f,
+                    Temperature = 0.0f,
                     TopP = 1,
                     TopK = 32,
                     MaxOutputTokens = 2048
@@ -71,11 +71,10 @@ namespace Vertex.Parser
             AsyncResponseStream<GenerateContentResponse> responseStream = response.GetResponseStream();
             await foreach (GenerateContentResponse responseItem in responseStream)
             {
-                if (!responseItem.Candidates[0].Content.Parts.Any())
+                if (responseItem.Candidates[0].Content.Parts.Count == 0)
                 {
                     continue;
-                }    
-
+                }
                 fullText.Append(responseItem.Candidates[0].Content.Parts[0].Text);
             }
 
